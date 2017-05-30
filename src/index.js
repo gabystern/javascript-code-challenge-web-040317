@@ -8,6 +8,11 @@ function submitForm(){
     event.preventDefault()
     newCommentList.addComment($('input#content').val())
     $('#comment-list').html(`${newCommentList.render()}`)
-    $('input#content').val('')
+    clearForm.call(this)
+    // $('input#content').val('')
   })
+}
+
+function clearForm() {
+  this.reset()
 }

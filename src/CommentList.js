@@ -2,12 +2,15 @@ class CommentList {
   constructor(){
     this.comments = []
   }
-
+  getComments(){
+    return this.comments.map(function(comment){ return comment.render() }).join('')
+  }
+  
   render(){
-    let html = '<ul>'
-    html += this.comments.map(function(comment){ return comment.render() }).join('')
-    html += '</ul>'
-    return html
+    // let html = '<ul>'
+    // html += this.comments.map(function(comment){ return comment.render() }).join('')
+    // html += '</ul>'
+    return `<ul>${this.getComments()}</ul>`
   }
 
   addComment(content){
